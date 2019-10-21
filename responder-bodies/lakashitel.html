@@ -1,0 +1,471 @@
+<!-- KÖSZÖNTŐ BLOKK -->
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+				<h1 style="width: 100%">
+					Kedves *|lastName|* *|firstName|*!
+				</h1>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- SZÖVEG BLOKK -->
+*|IF:request_loanAmount<19999999|*
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+				<span style="font-size:14px">A Bankmonitor.hu weboldalon lakáshitel iránt érdeklődtél.</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+*|ELSE:|*
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+				<span style="font-size:14px">A Bankmonitor.hu weboldalon lakáshitel iránt érdeklődtél. <br />
+				Hitelösszeg: *|request_loanAmount|*</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+*|IF:response_bmDiscounts_edigitalCoupon|*
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<span style="font-size:14px"
+					>Amennyiben ezt a hitelt választod a Bankmonitor
+				*|response_bmDiscounts_edigitalCoupon|*-ot ad ajándékba Neked
+				Extreme Digital utalványként!*</span
+					>
+			</td>
+		</tr>
+	</tbody>
+</table>
+*|END:IF|* *|END:IF|*
+<table
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	width="100%"
+	class="mcnDividerBlock"
+	style="min-width:100%;"
+	>
+	<tbody class="mcnDividerBlockOuter">
+		<tr>
+			<td
+				class="mcnDividerBlockInner"
+				style="min-width: 100%; padding: 18px 18px 10px;"
+				>
+				<table
+					class="mcnDividerContent"
+					border="0"
+					cellpadding="0"
+					cellspacing="0"
+					width="100%"
+					style="min-width: 100%;border-top: 2px solid #EAEAEA;"
+					>
+					<tbody>
+						<tr>
+							<td>
+								<span></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<h3>
+					Mi következik most:
+				</h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<ol>
+					<li>
+						<strong>Kollégánk</strong> – aki az ország legjobb hitelspecialistái
+						közé tartozik -
+						<strong>24 órán belül felveszi Veled a kapcsolatot</strong>
+						(munkanapokon)
+					</li>
+					<li>
+						Villámgyorsan megtudod, hogy a meglévő jövedelmed és a kiválasztott
+						ingatlan mellett
+						<strong>mennyi hitelt, milyen feltételekkel vehetsz fel</strong>
+					</li>
+					<li>
+						Ha van, akkor bemutatjuk az általad választottnál
+						<strong>jobb megoldást</strong> (és bemutatjuk az apró betűs
+						részleteket is)
+					</li>
+					<li>
+						<strong>Komplex kiszolgálást adunk:</strong> hitelügyleted A-tól
+						Z-ig intézik kollégáink
+					</li>
+				</ol>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	width="100%"
+	class="mcnDividerBlock"
+	style="min-width:100%;"
+	>
+	<tbody class="mcnDividerBlockOuter">
+		<tr>
+			<td
+				class="mcnDividerBlockInner"
+				style="min-width: 100%; padding: 18px 18px 10px;"
+				>
+				<table
+					class="mcnDividerContent"
+					border="0"
+					cellpadding="0"
+					cellspacing="0"
+					width="100%"
+					style="min-width: 100%;border-top: 2px solid #EAEAEA;"
+					>
+					<tbody>
+						<tr>
+							<td>
+								<span></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<span style="font-size:14px"
+					>Kérjük, vedd figyelembe, hogy a
+				<strong>Bankmonitor elsősorban új pénzügyi termék</strong>
+				(lakáshitel, hitelkiváltás, személyi kölcsön, bankszámla, stb.)
+				<strong>igényléséhez nyújt teljes körű támogatást</strong>, és csak
+				olyan meglévő szerződés kapcsán tud segítséget nyújtani, amelyet
+				eredetileg is a Bankmonitor szakértői segítségével kötöttél meg!
+				<br /><br />
+				Amennyiben <strong>nem akarsz új szerződést kötni</strong>, és tőlünk
+				függetlenül megkötött szerződésedet, valamint egyéb pénzügyi
+				helyzetedet érintő kérdésed merült fel,
+				<strong>látogass el a</strong>
+				<a href="https://bankmonitor.hu">bankmonitor.hu</a>
+				<strong>weboldalára, ahol naponta frissülő írásainkból és a </strong
+					><a href="https://jobbtudni.bankmonitor.hu/wiki/Kezd%C5%91lap"
+					>Jobb tudni</a
+					>
+				<strong>rovatunkból tájékozódhatsz!</strong></span
+					>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	width="100%"
+	class="mcnDividerBlock"
+	style="min-width:100%;"
+	>
+	<tbody class="mcnDividerBlockOuter">
+		<tr>
+			<td
+				class="mcnDividerBlockInner"
+				style="min-width: 100%; padding: 18px 18px 10px;"
+				>
+				<table
+					class="mcnDividerContent"
+					border="0"
+					cellpadding="0"
+					cellspacing="0"
+					width="100%"
+					style="min-width: 100%;border-top: 2px solid #EAEAEA;"
+					>
+					<tbody>
+						<tr>
+							<td>
+								<span></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<span style="font-size:14px"
+					>A <strong>Bankmonitor további szolgáltatásai</strong>, amivel
+				<strong>tízezreket</strong>, vagy
+				<strong>százezreket spórolhatsz:</strong></span
+					>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<ul>
+					<li>
+						<a href="https://bankmonitor.hu/bankszamla/">Bankszámlák</a>
+					</li>
+					<li>
+						<a href="https://bankmonitor.hu/hitelek/szemelyi-kolcson/"
+							>Személyi kölcsönök</a
+							>
+					</li>
+					<li>
+						<a href="https://bankmonitor.hu/hitelhez-segitjuk-vallalkozasodat/"
+							>Vállalati szolgáltatások</a
+							>
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<span style="font-size:14px"
+					><strong>Néhány hasznos információ:</strong></span
+					>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<ul>
+					<li>
+						<a href="https://bankmonitor.hu/a-bankmonitorrol/"
+							>Hogyan lehet a Bankmonitor szolgáltatása ingyenes?</a
+							>
+					</li>
+					<li>
+						<a href="https://bankmonitor.hu/uzletszabalyzat/"
+							>Üzletszabályzatunk</a
+							>
+					</li>
+					<li>
+						<a href="https://bankmonitor.hu/panaszkezelesi-szabalyzat/"
+							>Panaszkezelési szabályzatunk</a
+							>
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<span style="font-size:14px"
+					>Ha szeretnél kapcsolatba lépni velünk, mielőtt kollégánk
+				jelentkezik:</span
+					>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table
+	align="left"
+	border="0"
+	cellpadding="0"
+	cellspacing="0"
+	style="max-width:100%; min-width:100%;"
+	width="100%"
+	class="mcnTextContentContainer"
+	>
+	<tbody>
+		<tr>
+			<td
+				valign="top"
+				class="mcnTextContent"
+				style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
+				>
+				<span style="font-size:14px"
+					>Írj nekünk e-mailt a
+				<a href="mailto:bankmonitor@bankmonitor.hu"
+					>bankmonitor@bankmonitor.hu</a
+					>
+				címre!</span
+					>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,15 @@
+{
+  "name": "bm-autoresponder-scripts",
+  "version": "1.0.0",
+  "description": "Bankmonitor autoresponder scriptek",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "autoresponder-templates"
+  },
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "autoresponder-combine": "node combine-templates.js"
+  }
+}

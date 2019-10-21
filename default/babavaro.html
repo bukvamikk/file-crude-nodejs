@@ -1,0 +1,626 @@
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<h4 class="null" style="display: block;margin: 0;padding: 0;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">Kedves *|lastName|* *|firstName|*!</h4>
+											<br>
+											A Bankmonitor Babaváró hitelkalkulátorának eredményét ebben az emailben küldjük el neked, hogy bármikor meg tudd nézni.<br>
+*|IF:response_hasKo|*
+											Ezen kívül az alábbiak kapcsán hasznos információkat gyűjtöttünk össze számodra:
+											<ul>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Mikor és hol lehet igényelni</strong>&nbsp;a Babaváró hitelt?</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Melyek a Babaváró hitel&nbsp;<strong>legfontosabb feltételei</strong>?</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Milyen papírok szükségesek</strong>&nbsp;az igényléshez?</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Mennyi idő</strong>&nbsp;alatt kaphatod meg?</li>
+											</ul>
+*|END:IF|*
+											<br>
+											<u><strong>A Babaváró kalkuláció eredménye:</strong></u><br>
+											<br>
+*|IF:response_eligibleForBabyLoanValue < 3|*
+	*|IF:request_currentLoansMonthlyInstallment>0|*
+											Amennyiben a <u><strong>Babaváró hitellel kiváltod a jelenlegi hiteleidet</strong></u>, akkor a megadott adatok alapján számodra <strong>*|response_realLoanAmount|* Babaváró hitel</strong>  járhat, amelynek kamatmentes havi törlesztőrészlete 20 éves futamidőre <strong>*|response_realInstallment|*.</strong><br>
+	*|ELSEIF:request_creditLimitSumValue>0|*
+											Amennyiben a <u><strong>Babaváró hitellel kiváltod a jelenlegi hiteleidet</strong></u>, akkor a megadott adatok alapján számodra <strong>*|response_realLoanAmount|* Babaváró hitel</strong>  járhat, amelynek kamatmentes havi törlesztőrészlete 20 éves futamidőre <strong>*|response_realInstallment|*.</strong><br>
+	*|END:IF|*
+											Amennyiben a <u><strong>Babaváró hitelt szabad felhasználásra veszed fel</strong></u>, akkor a megadott adatok alapján számodra <strong>*|response_freelyUsableRealLoanAmount|* Babaváró hitel</strong> járhat, amelynek kamatmentes havi törlesztőrészlete 20 éves futamidőre <strong>*|response_freelyUsableRealInstallment|*.</strong><br>
+*|END:IF|*
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+*|IF:response_hasKo|*
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+	<tbody>
+		<tr>	
+			<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+				A Babaváró hitelt nem igényelheted, mert:
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+		<tbody>
+			<tr>	
+				<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+					<ol>
+	*|IF:response_ko1|*
+						<li>A feleségnek 18 évnél idősebbnek és 41 évnél fiatalabbnak kell lennie.</li>
+	*|END:IF|*
+	*|IF:response_ko2|*
+						<li>Csak házasok igényelhetik.</li>
+	*|END:IF|*
+	*|IF:response_ko3|*
+						<li>Meglévő gyermek(ek) esetén legalább az egyik fél első házassága esetén igényelhető.</li>
+	*|END:IF|*
+	*|IF:response_ko4|*
+						<li>Mindkét házasfélnek magyar lakcímmel kell rendelkeznie.</li>
+	*|END:IF|*
+	*|IF:response_ko5|*
+						<li>Egyik félnek sem lehet az állami adóhatóságnál köztartozása (pl. adótartozás).</li>
+	*|END:IF|*
+	*|IF:response_ko6|*
+						<li>Egyik fél sem szerepelhet elmaradással a KHR-ben.</li>
+	*|END:IF|*
+	*|IF:response_ko7|*
+						<li>Legalább az egyik félnek minimum 3 éves TB jogosultsággal kell rendelkeznie.</li>
+	*|END:IF|*
+	*|IF:response_ko8|*
+						<li>Nincs megfelelő jövedelmed.</li>
+	*|END:IF|*
+	*|IF:response_ko9|*
+						<li>Az igénylést megelőző utolsó 180 napnak magyar TB jogviszonyból kell származnia.</li>
+	*|END:IF|*
+				</ol>
+			</td>
+		</tr>
+	</tbody>
+</table>
+	*|IF:response_eligibleForBabyLoanValue < 5|*
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+		<tbody>
+			<tr>	
+				<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+					Amennyiben nem tudod a Babaváró hitel feltételeit teljesíteni, amelyeket alább részletesen is leírunk, és lakásra szeretnéd költeni a pénzt, akkor érdemes megnézned az <a href="https://bankmonitor.hu/hitelek/lakashitel/">aktuális lakáshitel ajánlatokat</a>!
+					<br>
+					Ha egyéb célra szeretnéd felhasználni a kölcsönt, akkor a <a href="https://bankmonitor.hu/hitelek/szemelyi-kolcson/">személyi kölcsönök között találhatsz</a> megfelelő ajánlatot!
+				</ol>
+			</td>
+		</tr>
+	</tbody>
+</table>
+	*|END:IF|*
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<u><strong>Mikor és hol lehet igényelni a Babaváró hitelt?</strong></u><br>
+											<br>
+											A Babaváró támogatás&nbsp;<strong>2019.07.01-től</strong>&nbsp;lesz igényelhető. Várhatóan július 1-én roham indul ezen kiemelten kedvező hitel lehetőségért. Javasoljuk, hogy kényelmes folyamatainkkal élve a Bankmonitoron keresztül igényeld a Babaváró hiteledet. Az igénylés konkrét módjáról tájékoztatni fogunk, amint meghatározásra kerültek.<br>
+											A Babaváró hitelre vonatkozó szerződést legkésőbb&nbsp;<strong>2022.12.31-ig</strong>&nbsp;lehet megkötni.<br>
+											<br>
+											2019.07.01-ig nem érdemes bemenni a bankba, mert nem tudsz érdemben semmit intézni, és a feltételek kapcsán sem tudnak téged teljes körűen tájékoztatni.<br>
+											<br>
+											<strong>Mi folyamatosan nyomon követjük az eseményeket, és tartjuk a kapcsolatot a bankokkal, így a Bankmonitoron keresztül azonnal értesülhetsz az igényléssel kapcsolatos teendőkről is!</strong><br>
+											<br>
+											<u><strong>Melyek a Babaváró hitel legfontosabb feltételei?</strong></u><br>
+											<br>
+											<strong>Család állapot és gyermekek:</strong>&nbsp;A támogatást kizárólag házasok igényelhetik. Amennyiben bármelyik félnek van már gyermeke, akkor legalább az egyik félnek az első házasságának kell lennie.<br>
+											<br>
+											<strong>Életkor:</strong>&nbsp;Kizárólag a feleség életkora számít, akinek az igényléskor 18 évesnél idősebbnek kell lennie, de nem töltheti be a 41. életévét.<br>
+											<br>
+											<strong>Lakcím:</strong>&nbsp;Mindkét félnek magyarországi lakcímmel kell rendelkeznie.<br>
+											<br>
+											<strong>OEP és NAV:</strong>&nbsp;Legalább az egyik félnek 3 éves folyamatos társadalombiztosítási (TB) jogviszonyt kell tudni igazolni. Ebbe a közfoglalkoztatotti jogviszony maximum 1 évvel számítható be, magyar állampolgár pedig külföldi jogviszonyt is igazolhat. Fontos, hogy a 3 éves TB jogviszonyból a Babaváró igénylést megelőző 180 napnak mindenképpen magyar TB jogviszonyból kell származnia! Ezen kívül egyik félnek sem lehet NAV köztartozása.<br>
+											<br>
+											<strong>Hitelképesség:</strong>&nbsp;A támogatást csak akkor kaphatod meg, ha a bank hitelképesnek minősít. Ez azt jelenti, hogy rendelkezni kell megfelelő jövedelemmel, valamint egyik fél sem szerepelhet elmaradás miatt az adóslistán (KHR – Központi Hitelinformációs Rendszer, régen BAR lista).<br>
+											&nbsp;
+											<p align="left" style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;"><strong>A Babaváró támogatás három részből tevődik össze:</strong></p>
+											<ol>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Maximum 10 millió Ft kamatmentes, szabad felhasználású hitel&nbsp;<strong>(állami kamattámogatással)</strong></li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">A hitel&nbsp;<strong>törlesztésének átmeneti szüneteltetése</strong>&nbsp;az első és a második gyermek megszületését követően</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">A hitelből történő elengedés&nbsp;<strong>(gyermekvállalási támogatás)</strong></li>
+											</ol>
+											A Babaváró támogatáshoz nem kötelező előre gyermeket vállalni, azonban a hozzá tartozó kedvezmények kizárólag gyermekek születése esetén érvényesek. A kedvezmények részletes feltételeiről&nbsp;<a href="https://bankmonitor.hu/hitelek/babavaro-tamogatas/" rel="noopener" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #fa4614;font-weight: normal;text-decoration: underline;">itt olvashatsz bővebben</a>.<br>
+											<br>
+											<u><strong>A Babaváró hitel pénzügyi feltételei:</strong></u><br>
+											<br>
+											<strong>Maximális futamidő:</strong> 20 év<br>
+											<br>
+											<strong>Kamat:</strong> Az első 5 év kamatmentes, ezt követően csak akkor marad kamatmentes, ha 5 éven belül legalább 1 gyermek született. Ellenkező esetben a kamat mértéke az első 5 évre az 5 éves átlagos állampapír hozam * 1,3 + 2 %, a 6. évtől az 5 éves átlagos állampapír hozam * 1,3% + 5%. A kamat mértéke 5 évente változó.<br>
+											<br>
+											<strong>Kezességvállalási díj:</strong> A fennálló tőketartozás 0,5%-a, amelyet havi részletekben a törlesztőrészlettel együtt kell fizetni.<br>
+											&nbsp;
+											<p align="left" style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;"><strong>Gyermekvállalás esetén a pénzügyi feltételek változása:</strong></p>
+											<ul>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">1 gyermek: Ha 5 éven belül születik, a kölcsön a futamidő végéig kamatmentes marad.</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">2 gyermek: A kölcsöntartozás 30%-át elengedik.</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">3 gyermek: A kölcsöntartozás 100%-át elengedik.</li>
+											</ul>
+											<strong>Példa:</strong> a hitel törlesztése, ha a hiteligénylőknek két gyermeke születik (első gyermek a hitelfelvétel követő 24. hónapban, a második a 48. hónapban):
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnImageBlockOuter">
+		<tr>
+			<td valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+					<tbody>
+						<tr>
+							<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+								<img align="center" alt="" src="https://gallery.mailchimp.com/c19538ecae13033d3f7006325/images/2b6dca8f-2214-4dea-a7a8-83eac99f628c.png" width="520" style="max-width: 520px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>Mi történik, ha nem születik gyermeke a hitelfelvevőknek?</strong>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnImageBlockOuter">
+		<tr>
+			<td valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+					<tbody>
+						<tr>
+							<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+								<img align="center" alt="" src="https://gallery.mailchimp.com/c19538ecae13033d3f7006325/images/6e2198b5-545c-4014-9e7a-30e62b30e534.png" width="520" style="max-width: 520px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>Mit vizsgálnak a bankok a hiteligénylésed beadását követően?</strong><br>
+											<br>
+											A bankok minden esetben hitelképességi vizsgálatot végeznek. A jelenlegi szabályok értelmében a hiteligénylők igazolt havi jövedelmének az 50%-ig terjedhet a hitelfelvételből származó összesített havi törlesztési kötelezettségük. Ha van egy két keresős házaspár, akik összesen 300 ezer Ft nettó igazolt jövedelemmel rendelkeznek, akkor ők maximum havi 150 ezer Ft havi törlesztést vállalhatnak fel. Amennyiben a házaspárnak a Babaváró hitel igénylését megelőzően felvett hitelekből már van 80 ezer Ft havi törlesztési kötelezettsége, akkor (150-80 ezer Ft) 70 ezer Ft havi törlesztőrészletet vállalhatnak még fel.<br>
+											<br>
+											Tekintettel arra, hogy a Babaváró hitel 10 millió Ft-os összegének havi törlesztő részlete 45 833 Ft lesz, a példánkban szereplő házaspár ezen szempont alapján megkaphatja az igényelt hitelt.<br>
+											<br>
+											Fontos hangsúlyoznunk, hogy – tapasztalataink szerint – az átlagnál lényegesen alacsonyabb jövedelemmel rendelkező családok esetén a bankok nem minden esetben adnak olyan mértékben hitelt, hogy annak törlesztő részlete kitegye a család bevételének 50%-át.<br>
+											<br>
+											A hiteligénylő természetesen nem szerepelhet a KHR listán negatív státusszal, azaz nem lehet korábban egy éven belül rendezett késedelmes hitele, sem aktuálisan fennálló késedelme.<br>
+											<br>
+											Fentiekben a legfontosabb banki vizsgálati szempontokat mutattuk be. Fontos kiemelni, hogy egyes jövedelmek, pl. a napjainkban igen népszerű KATA, ingatlan bérbeadási és minden egyéb, nem klasszikus alkalmazotti jövedelem eltérő elbírálás alá esik.<br>
+											<br>
+											Ezen felül a Babaváró hitel egyéb bírálati szempontjai is jelentősen etlérnek a bankok között, amelyek még később is megváltozhatnak! Ennek köszönhetően egyik banknál enyhébb, más bankoknál szigorúbb igénybevételi feltételekkel lehet találkozni. Az aktuális banki gyakorlatot illetően a Bankmonitor szakértői tudnak tájékoztatást adni.<br>
+											<br>
+											<strong>Milyen papírok szükségesek az igényléshez?</strong><br>
+											<br>
+											A legtöbb esetben <strong>nem szükséges igazolásokkal bajlódnod</strong>, elegendő nyilatkoznod arról, hogy megfelelsz a feltételeknek. Még azt is kérheted, hogy a TB jogviszonyról szóló igazolásodat a bank kérje le a hatóságtól, így azt sem szükséges neked intézni.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<p align="left" style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;"><strong>Kizárólag az alábbi dolgokkal kell készülnöd ahhoz, hogy el tudd indítani a hitelfelvételt:</strong></p>
+											<ul>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>személyes okmányok</strong>, azaz személyi igazolvány, lakcímkártya, adóazonosító jel (külföldi igénylők esetén az esetükben érvényes okmány, pl. regisztrációs igazolás, tartózkodási kártya, stb.),</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">amennyiben <strong>külföldi TB</strong> jogviszonyt igazolsz, ezt a papírt neked kell kérni a külföldi hatóságtól, és itthon egy hiteles magyar fordítást kell készíttetned,</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">amennyiben 12. hetet betöltött magzatra igénylitek a támogatást, akkor ehhez a <strong>várandósgondozási könyvet</strong> kell előkészítened.</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<p align="left" style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;"><strong>Mennyi idő alatt kaphatod meg a hitelt?</strong><br>
+												<br>
+												Hiánytalan dokumentáció esetén a banknak 10 nap alatt kell elbírálnia a kérelmeket, és ezt követően történik a folyósítás. Várakozásaink szerint nagyon sok pár szeretne majd élni a lehetőséggel, aminek következtében a teljes átfutási idő is hosszabbodhat.<br>
+												<br>
+												<strong>Mit várhatsz a Bankmonitortól, ha Babaváró hitelt szeretnél?</strong>
+											</p>
+											<ul>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">minden szempontból felkészítünk a hitelfelvétel kényelmes és gyors lebonyolítására</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">megkeresünk, amint lehetőség nyílik a hiteligénylések leadására</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">hiteligényeddel kapcsolatban minden apró kérdésre választ adunk</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">és mindez számodra ingyenes lesz, mivel a Bankmonitor bevétele a bankoktól származik (bevételünk elsődleges forrása a bankok számára megtakarított költség, számos olyan feladatot ellátunk gyorsan és hatékonyan, melyet a bankfiókoknak kellene – közreműködésünk hiányában - elvégezni)</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+*|ELSE:|*
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>Díjmentesen segítünk, töltsd ki az alábbi adatbekérőnk! Kiemelt</strong> és <strong>gyors</strong> ügyintézést biztosítunk számodra!
+											&nbsp;
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnButtonBlockOuter">
+		<tr>
+			<td style="padding-top: 0;padding-right: 18px;padding-bottom: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top" align="center" class="mcnButtonBlockInner">
+				<table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 4px;background-color: #E53711;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+					<tbody>
+						<tr>
+							<td align="center" valign="middle" class="mcnButtonContent" style="font-family:'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;padding: 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+								<a class="mcnButton " title="BABAVÁRÓ ADATLAP KITÖLTÉSE" href="https://bankmonitor.hu/hitelek/babavaro-tamogatas/adatbekero/?email=*|email|*&amp;li=*|leadId|*" target="_blank" style="font-weight: normal;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">BABAVÁRÓ ADATLAP KITÖLTÉSE</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>A Babaváró hitel bírálati szempontjai jelentősen eltérnek a bankok között!</strong> Ennek köszönhetően egyik banknál enyhébb, más bankoknál szigorúbb igénybevételi feltételekkel lehet találkozni. <strong>Mivel eltér a bankok által előírt minimális jövedelem, az elfogadható jövedelmek típusa, az igénylőkre vonatkozó életkori szabályok, és még számos bírálati szempont, így könnyen előfordul, hogy ugyanaz az igénylő az egyes bankoknál eltérő összegű Babaváró hitelre jogosult.</strong><br>
+											<br>
+											Az aktuális banki gyakorlatot illetően a Bankmonitor szakértői tudnak tájékoztatást adni.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>MIÉRT VÁLASZD A BANKMONITORT?</strong>
+											<ul>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Tudjuk, <strong>melyik banknál kaphatod meg a legnagyobb összeget</strong> - Ismerjük a bankok közötti eltéréseket</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Szakértőink az <strong>egész országban</strong> rendelkezésre állnak</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Sorban állás nélkül, <strong>kényelmesen, kiszámíthatóan</strong> juthatsz Babaváróhoz</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Szolgáltatásunk számodra <strong>ingyenes</strong><br>
+													(bevételeink a bankoktól származnak, mert költséget takarítunk meg nekik)
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>Hogyan segítünk Neked a Babaváró hitel felvétele során, mi a következő lépés?</strong>
+											<ol>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Töltsd ki az alábbi linken elérhető <strong>adatlapot</strong> (az igényléshez és hitelminősítéshez elengedhetetlen)</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Szakértőnk (munkanapon) <strong>24-36 órán belül felhív</strong></li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Részletes tájékoztatást</strong> adunk</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><strong>Elindítjuk</strong> az igénylésedet, <strong>átvállaljuk</strong> az adminisztrációt és <strong>támogatunk</strong> a szerződés aláírásáig</li>
+											</ol>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnButtonBlockOuter">
+		<tr>
+			<td style="padding-top: 0;padding-right: 18px;padding-bottom: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top" align="center" class="mcnButtonBlockInner">
+				<table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 4px;background-color: #E53711;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+					<tbody>
+						<tr>
+							<td align="center" valign="middle" class="mcnButtonContent" style="font-family:'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;padding: 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+								<a class="mcnButton " title="BABAVÁRÓ ADATLAP KITÖLTÉSE" href="https://bankmonitor.hu/hitelek/babavaro-tamogatas/adatbekero/?email=*|EMAIL|*&amp;li=*|leadId|*" target="_blank" style="font-weight: normal;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">BABAVÁRÓ ADATLAP KITÖLTÉSE</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+*|END:IF|*
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											<strong>Bankmonitor.hu</strong>
+											<ul>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">pénzügyi kalkulációk</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">objektív összehasonlítások</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">a papírmunka átvállalása (lehetőségek szerint maximális mértékben) a kényelmes szerződéskötéshez</li>
+												<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">banki pénzügyek menedzselése</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody class="mcnTextBlockOuter">
+		<tr>
+			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+					<tr>
+						<![endif]-->
+						<!--[if mso]>
+						<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+								<tbody>
+									<tr>
+										<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+											A Babaváró hitelről szóló általános tájékoztatót <a ems:deeplink="false" href="http://bankmonitordev.hu/auto/md_584852.pdf" rel="noopener" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #fa4614;font-weight: normal;text-decoration: underline;">itt találod</a>, továbbá <a ems:deeplink="false" href="http://bankmonitordev.hu/auto/md_584853.pdf" rel="noopener" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #fa4614;font-weight: normal;text-decoration: underline;">itt olvashatod</a> a Bankmonitor Partner Kft valamennyi pénzügyi szolgáltatás közvetítését megelőző általános tájékoztatását .
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--[if mso]>
+						</td>
+						<![endif]-->
+						<!--[if mso]>
+					</tr>
+				</table>
+				<![endif]-->
+			</td>
+		</tr>
+	</tbody>
+</table>
